@@ -19,7 +19,7 @@ const Component: FC = () => {
   return (
     <div className="bg-gradient-to-b from-purple-400 via-pink-500 to-red-500 color-white">
       <div className="flex flex-row h-screen">
-        <div className="flex flex-col w-screen md:w-1/2 lg:w-1/2 overflow-y-scroll">
+        <div className="flex flex-col w-screen flex-shrink-0  md:w-1/2 lg:w-1/2 overflow-y-scroll">
           {
             feed?.rss.channel.item.map( item => {
               return (
@@ -39,7 +39,7 @@ const Component: FC = () => {
             })
           }
         </div>
-        <div className="p-4">
+        <div className="p-4 flex-shrink">
           <img
             src={feed?.rss.channel.image.url}
             alt='podcast cover art'

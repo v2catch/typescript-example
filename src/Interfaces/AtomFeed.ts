@@ -60,7 +60,7 @@ interface Image {
 interface Item {
   guid:                 GUID;
   title:                string;
-  description:          ContentEncoded;
+  description:          string;
   pubDate:              string;
   author:               string;
   link:                 string;
