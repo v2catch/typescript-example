@@ -20,11 +20,6 @@ JavaScript is high-level, often just-in-time compiled, and multi-paradigm. It ha
 -   You have freedom to do whatever you want.
 -   Dynamic and weakly typed can lead more run time exceptions or errors
 
-## What is TypeScript?
-
-In short, TypeScript is a superset of JavaScript that has optional typing and compiles to plain JavaScript.
-
-It's really just javascript with extra steps.
 
 ### Why Typescript
 
@@ -36,8 +31,44 @@ It's really just javascript with extra steps.
 -   Allows better development time tool support
 -   It can extend the language beyond the standard decorators, async/await
 
-## JS Examples
 
+## What is TypeScript?
+
+In short, TypeScript is a superset of JavaScript that has optional typing and compiles to plain JavaScript.
+
+It's really just javascript with types.
+### There are a few different ways to define things.
+
+#### Interfaces
+Defining shapes of objects with multiple types
+```js
+interface OtherChannel {
+  title:                 string;
+}
+
+//declaration merging
+interface OtherChannel {
+  description:           string;
+}
+
+//extending
+interface Channel extends OtherChannel {
+  description:           string;
+}
+
+const [channel, getChannel] = useState<Channel>()
+//or
+const foo = getStuff<Channel>();
+```
+
+#### Types
+Types are not a new type defintion just an Alias to an existing type or types
+```ts
+type Second = number|string;
+let time: Second = 42;
+```
+
+## JS Examples
 ### Weird world of JS
 
 ```js
