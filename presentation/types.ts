@@ -57,3 +57,52 @@
   let time2: Second = "42";
   let time3: number = time2;
 }
+
+{
+  let x: (number | null) = 3;
+
+  x = null;
+}
+
+
+{
+
+  interface OtherChannel {
+    title: string;
+  }
+  
+  //declaration merging
+  interface OtherChannel {
+    description: string;
+    transform(desc:string):string
+  }
+  
+  //extending
+  interface Channel extends OtherChannel {
+    description2?: string;
+  }
+
+
+  const getFirstItem = <T>(arg: T[]): T => {
+    return arg[0];
+  }
+  
+  const channels: Channel[] = [
+    {
+      title: 'blah',
+      description: 'blah',
+      description2: 'blah',
+      transform: (desc: string) => desc + 'a',
+    },
+    {
+      title: 'blah',
+      description: 'blah',
+      description2: 'blah',
+      transform: (desc: string) => desc + 'a',
+    },
+  ]
+  
+  const channel = getFirstItem<Channel>(channels);
+
+  channel.description2
+} 
